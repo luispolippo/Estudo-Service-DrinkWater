@@ -16,8 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="com.polippo.exercicioservice_drinkwater.sync.DrinkWaterReminderIntentService"
+            android:exported="false"/>
     </application>
 
-    <!--TODO: 06 - Declare DrinkWaterReminderInstantService no Android Manifest -->
+    <!--06 - Declare DrinkWaterReminderInstantService no Android Manifest -->
 
 </manifest>

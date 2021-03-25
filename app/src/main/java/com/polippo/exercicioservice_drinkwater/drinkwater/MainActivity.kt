@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import com.polippo.exercicioservice_drinkwater.R
+import com.polippo.exercicioservice_drinkwater.utils.PreferencesUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -23,8 +24,13 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         prefs.registerOnSharedPreferenceChangeListener(this)
     }
 
-    /*TODO: 07 - Crie uma função updateWaterCount
+    /*07 - Crie uma função updateWaterCount
     *   - Atualize o textview_quantity com o valor da PreferenceUtils.getWaterCount */
+
+    fun updateWaterCount(){
+        val count = PreferencesUtils.getWaterCount(this)
+        textview_quantity.text = "$count"
+    }
 
     /*TODO: 08 - crie uma função chamada incrementWaterHandler
     *   - Crie uma intent explicita para acionar o DrinkWaterIntentService
